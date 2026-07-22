@@ -1,0 +1,82 @@
+{
+  
+  "compilerOptions": {
+    
+    // All source TypeScript files will be inside src/
+    "rootDir": "./src", 
+    // Compiled JavaScript files will be generated in dist/
+    "outDir": "./dist", 
+
+    // Uses Node.js modern module system (ES Modules)
+    "module": "nodenext",
+    // Resolves imports using Node.js rules
+    "moduleResolution": "nodenext",
+    // Generate JavaScript compatible with ES2020 environments
+    // ES2020 supports modern features such as optional chaining 
+    "target": "ES2020", 
+    
+    // Provides TypeScript definitions for ES2020 features
+    "lib": ["ES2020"],
+    // Loads Node.js type definitions 
+    "types": ["node"], 
+    
+
+     // Generates .map files. Helps debugging by mapping compiled JS errors back to original TypeScript source files
+    "sourceMap": true,
+     // Do not generate .d.ts declaration files (used for reusable libaries which is not needed)
+    "declaration": false, 
+     // No need to generate declaration maps since declarations are disabled
+    "declarationMap": false, 
+
+    
+    // "noImplicitReturns": true, // Forces all code paths to return a value
+    // "noImplicitOverride": true, // Forces use of 'override' keyword when overriding methods
+    // "noUnusedLocals": true,  // Reports variables declared but never used
+    // "noUnusedParameters": true, // Reports function parameters that are never used
+    // "noFallthroughCasesInSwitch": true, // Prevents accidental fallthrough in switch statements.// Currently disabled to keep development flexible
+    // "noPropertyAccessFromIndexSignature": true, // Restricts property access on index-signature objects. // Disabled to reduce friction during development
+
+    
+    // "verbatimModuleSyntax": true,  // Preserves import/export syntax exactly as written. May cause import issues
+    // "isolatedModules": true,  // Ensures every file can be transpiled independently.  Uneccessary here
+    // "noUncheckedSideEffectImports": true, // Warns about imports that only exist for side effects.   Uneccessary here
+    // "moduleDetection": "force", // Forces TypeScript to treat files as modules. Uneccessary here
+    
+    // Enables TypeScript's strict mode
+    "strict": true, 
+    //Allows JSX syntax
+    "jsx": "react-jsx",
+    // Skips type checking of library files inside node_modules
+    "skipLibCheck": true,
+    // Allows cleaner imports from CommonJS packages
+    "esModuleInterop": true,
+    // Allows importing JSON files
+    "resolveJsonModule": true,
+     // Would force array/object index accesses to be checked
+    "noUncheckedIndexedAccess": true,
+     // Makes optional properties behave more accurately
+    "exactOptionalPropertyTypes": true
+  }
+}
+//JavaScript is a programming language used to build interactive websites (Primary Use: Handles client-side tasks like form validations, animations, button clicks, and UI updates.Can manipulate HTML tags and the web page UI), while Node.js is a runtime environment that allows you to execute JavaScript code outside of a web browser.
+
+// Why TypeScript and not directly JavaScript ? 
+// TypeScript : "JavaScript + Notes" for developers and the TypeScript compiler.
+// Suppose : In JS : function placeOrder(order) {
+//     console.log(order.totalAmount);
+// }
+
+// placeOrder("Pizza");
+// Runtime Error
+// In TS : interface Order {
+//     totalAmount: number;
+// }
+
+// function placeOrder(order: Order) {
+//     console.log(order.totalAmount);
+// }
+
+// placeOrder("Pizza");
+// Error while coding : Argument of type 'string' is not assignable to type 'Order'. Safer !
+
+// JavaSrcipt Engine : Node.js does not understand TS. Hence TS -> JS before Node.js runs it
